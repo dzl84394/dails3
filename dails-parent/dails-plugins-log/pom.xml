@@ -19,8 +19,18 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <!-- 监控使用 -->
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-actuator</artifactId>
+			<version>1.5.6.RELEASE</version>
+		</dependency>
+		
+		
+		
   </dependencies>
 </project>
