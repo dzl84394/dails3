@@ -1,7 +1,6 @@
 package org.dails.plugins.log.interceptor;
 
 import java.lang.reflect.Method;
-import java.util.concurrent.atomic.LongAdder;
 
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -9,18 +8,17 @@ import org.apache.logging.log4j.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.dails.plugins.log.context.ThreadContext;
 import org.dails.plugins.log.utils.CommonTools;
 import org.dails.plugins.log.utils.LoggingUtils;
 import org.dails.plugins.log.vo.MethodLogContent;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Service;
-
 import org.springframework.boot.actuate.metrics.CounterService;
 import org.springframework.boot.actuate.metrics.GaugeService;
 import org.springframework.boot.actuate.metrics.Metric;
 import org.springframework.boot.actuate.metrics.reader.MetricReader;
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Service;
 
 /**
  * 日志打印拦截
@@ -33,8 +31,6 @@ import org.springframework.boot.actuate.metrics.reader.MetricReader;
 @Order(100)
 public class RequestMappingInterceptor {
 
-	@Autowired
-	ServerContextUtil serverContextUtil;
 
 	@Autowired
 	GaugeService gaugeService;

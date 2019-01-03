@@ -9,6 +9,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.dails.plugins.log.annotation.MyLoggable;
+import org.dails.plugins.log.context.ThreadContext;
 import org.dails.plugins.log.utils.CommonTools;
 import org.dails.plugins.log.utils.LoggingUtils;
 import org.dails.plugins.log.vo.MethodLogContent;
