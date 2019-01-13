@@ -46,6 +46,7 @@ public class LoggingInterceptor {
 			costMillis = System.currentTimeMillis() - startTimeMillis;
 		}
 		MethodLogContent logContent=new MethodLogContent(method, point.getArgs(), result, costMillis,exception);
+		
 		LoggingUtils.log(getLevel(method), logger,logContent,null);
 		
 		if (exception != null && ThreadContext.get().getStackInfo().isContain(exception, true)){

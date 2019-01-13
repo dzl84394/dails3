@@ -1,4 +1,4 @@
-package com.dails.example;
+package com.dails.heha;
 
 /**
  * Hello world!
