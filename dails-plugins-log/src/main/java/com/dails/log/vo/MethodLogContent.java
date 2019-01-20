@@ -29,7 +29,7 @@ public class MethodLogContent extends BasicLogContent {
 	
 	
 	
-	public MethodLogContent(Method method,Object[] inputs,Object output,long costTimeMillis,Long concurrency,Long totalConcurrency,Throwable throwable){
+	public MethodLogContent(Method method,Object[] inputs,Object output,long costTimeMillis,Integer concurrency,Integer totalConcurrency,Throwable throwable){
 		super();
 		this.method= method.getDeclaringClass().getName()+"."+method.getName();
 //		this.method=CommonTools.getMethodDeclareInfo(method);

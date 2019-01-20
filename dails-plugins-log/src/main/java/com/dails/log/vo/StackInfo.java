@@ -15,8 +15,8 @@ public class StackInfo {
 	
 	protected String traceId;
 	//private BasicRestResponse restResponse; 
-	protected ClientInfo rootClientInfo;
-	protected ClientInfo clientInfo;
+	protected ClientInfo fromClientInfo;
+	protected ClientInfo localClientInfo;
 
 	private ControllerMethodContext ctlMethodCtx;
 	
@@ -77,22 +77,7 @@ public class StackInfo {
 		return this.ctlMethodCtx;
 	}
 
-	public ClientInfo getRootClientInfo() {
-		return rootClientInfo;
-	}
 	
-
-	public void setRootClientInfo(ClientInfo rootClientInfo) {
-		this.rootClientInfo = rootClientInfo;
-	}
-
-	public ClientInfo getClientInfo() {
-		return clientInfo;
-	}
-
-	public void setClientInfo(ClientInfo clientInfo) {
-		this.clientInfo = clientInfo;
-	}
 
 	
 	
@@ -100,17 +85,41 @@ public class StackInfo {
 	 * 获得根部调用者的ip地址
 	 * @return
 	 */
-	public String getRootClientIp(){
-		if(rootClientInfo==null) return null;
-		return rootClientInfo.getClientIp();
+	public String getFromClientIp(){
+		if(fromClientInfo==null) return null;
+		return fromClientInfo.getClientIp();
 	}
 	/**
 	 * 获得调用者的ip地址
 	 * @return
 	 */
-	public String getClientIp(){
-		if(clientInfo==null) return null;
-		return clientInfo.getClientIp();
+	public String getLocalClientIp(){
+		if(localClientInfo==null) return null;
+		return localClientInfo.getClientIp();
+	}
+
+
+
+	public ClientInfo getFromClientInfo() {
+		return fromClientInfo;
+	}
+
+
+
+	public void setFromClientInfo(ClientInfo fromClientInfo) {
+		this.fromClientInfo = fromClientInfo;
+	}
+
+
+
+	public ClientInfo getLocalClientInfo() {
+		return localClientInfo;
+	}
+
+
+
+	public void setLocalClientInfo(ClientInfo localClientInfo) {
+		this.localClientInfo = localClientInfo;
 	}
 
 	

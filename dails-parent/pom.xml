@@ -49,19 +49,18 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
 
 		<!-- 监控使用 使用他的计数器功能 ，默认的spring 2以上版本已经取消了计数器功能 <dependency> <groupId>org.springframework.boot</groupId> 
-			<artifactId>spring-boot-starter-actuator</artifactId> <version>1.5.6.RELEASE</version> 
-			</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-actuator</artifactId>
 			<version>1.5.6.RELEASE</version>
-		</dependency>
+		</dependency> -->
 
 
 

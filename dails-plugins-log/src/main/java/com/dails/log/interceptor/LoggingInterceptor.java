@@ -29,7 +29,7 @@ import com.dails.log.vo.MethodLogContent;
 @Order(100)
 public class LoggingInterceptor {
 
-	@Around(value = "@annotation(org.dails.plugins.log.annotation.MyLoggable)")
+	@Around(value = "@annotation(com.dails.log.annotation.MyLoggable)")
 	public Object intercept(ProceedingJoinPoint point) throws Throwable {
 		Logger logger = LogManager.getLogger(point.getTarget().getClass());
 		Method method = CommonTools.getMethod(point);

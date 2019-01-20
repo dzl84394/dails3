@@ -1,8 +1,15 @@
 package com.dails.log.context;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import com.dails.log.vo.StackInfo;
 
 public class ThreadContext {
+	/**
+	 * 是http的header里面带过来，报文的头文件过来，要做适应性修改
+	 */
 
 	private static ThreadContext instance;
 
@@ -13,11 +20,12 @@ public class ThreadContext {
 	}
 
 	
-	
+	private static Map<String, AtomicInteger> counter;
 	
 	private static ThreadLocal<StackInfo> localStackInfo;
 
 	private ThreadContext() {
+		counter = new HashMap<String,AtomicInteger>();
 		localStackInfo = new ThreadLocal<>();
 	}
 
@@ -55,5 +63,18 @@ public class ThreadContext {
 	public void saveInfo(StackInfo v) {
 		localStackInfo.set(v);
 	}
+
+	public AtomicInteger getCurrency(String key) {
+		AtomicInteger atomic = counter.get(key);
+		if (atomic == null) {
+			atomic = new AtomicInteger(0);
+		}
+		return atomic;
+	}
+	
+	public void setCurrency(String key,AtomicInteger atomic) {
+		counter.put(key, atomic);
+	}
+
 
 }
