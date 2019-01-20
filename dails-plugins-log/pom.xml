@@ -23,6 +23,7 @@
 		<guava.version>20.0</guava.version>
 		<fastjson.version>1.2.29</fastjson.version>
 		<curator.version>2.11.1</curator.version>
+		
 	</properties>
 
 
@@ -33,13 +34,11 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- 监控使用 -->
-
-		<!-- <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-actuator</artifactId>
-			<version>1.5.6.RELEASE</version>
-		</dependency> -->
+		<dependency>
+				<groupId>com.dails</groupId>
+				<artifactId>dails-plugins-base</artifactId>
+			</dependency>
+			
 
 
 	</dependencies>

@@ -21,102 +21,111 @@
 		<guava.version>20.0</guava.version>
 		<fastjson.version>1.2.29</fastjson.version>
 		<curator.version>2.11.1</curator.version>
+		<junit.version>4.12</junit.version>
+		<springboot.version>2.1.0.RELEASE</springboot.version>
+		<aspectj.version>1.9.2</aspectj.version>
+		<assertj.version>3.11.1</assertj.version>
 	</properties>
 
+	<dependencyManagement>
 
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-logging</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-log4j2</artifactId>
-		</dependency>
+		<dependencies>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<scope>test</scope>
+				<version>${junit.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter</artifactId>
+				<version>${springboot.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-starter-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-log4j2</artifactId>
+				<version>${springboot.version}</version>
+			</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-		</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${springboot.version}</version>
+			</dependency>
 
-		<!-- 监控使用 使用他的计数器功能 ，默认的spring 2以上版本已经取消了计数器功能 <dependency> <groupId>org.springframework.boot</groupId> 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-actuator</artifactId>
-			<version>1.5.6.RELEASE</version>
-		</dependency> -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<version>${springboot.version}</version>
+			</dependency>
 
-
-
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>${guava.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>
-			<version>${fastjson.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjrt</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-		</dependency>
-
-
-		<!-- <dependency>
-			<groupId>com.dails</groupId>
-			<artifactId>dails-plugins-log</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>com.dails</groupId>
-			<artifactId>dails-plugins-example</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>com.dails</groupId>
-			<artifactId>dails-plugins-heha</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.dails</groupId>
-			<artifactId>dails-plugins-master</artifactId>
-			<version>0.0.1</version>
-		</dependency> -->
-
-	</dependencies>
+			<!-- 监控使用 使用他的计数器功能 ，默认的spring 2以上版本已经取消了计数器功能 <dependency> <groupId>org.springframework.boot</groupId> 
+				<dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-actuator</artifactId> 
+				<version>1.5.6.RELEASE</version> </dependency> -->
 
 
 
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.dails</groupId>
+				<artifactId>dails-plugins-base</artifactId>
+				<version>0.0.1</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.dails</groupId>
+				<artifactId>dails-plugins-log</artifactId>
+				<version>0.0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.dails</groupId>
+				<artifactId>dails-plugins-example</artifactId>
+				<version>0.0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.dails</groupId>
+				<artifactId>dails-plugins-heha</artifactId>
+				<version>0.0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.dails</groupId>
+				<artifactId>dails-plugins-master</artifactId>
+				<version>0.0.1</version>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
 
 
 

@@ -38,3 +38,11 @@ aop，在方法入口，记录入参，时间，方法名的并发数+1
 maven
 log4j.xml
 
+
+
+### 例子
+- jar
+https://github.com/dzl84394/dails3/tree/master/dails-plugins-log
+
+- test
+https://github.com/dzl84394/dms/tree/master/dms-log-test
