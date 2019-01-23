@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="index::head">
+
+</head>
+
+<body role="document">
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" th:include="index::header"></nav>
+
+
+
+	<div class="container">
+
+
+
+		<div class="blog-header">
+			<h1 class="blog-title"> ${objname}编辑</h1>
+		</div>
+
+		<div class="row">
+
+			<div class="blog-main" th:include="${objname}/new::${objname}Form"></div>
+
+
+		</div>
+		<!-- /.row -->
+
+	</div>
+	<!-- /.container -->
+
+	<div class="blog-footer" th:include="index :: footer"></div>
+
+
+</body>
+<script th:inline="javascript">
+	
+</script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="index::head">
+
+</head>
+
+<body role="document">
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" th:include="index::header"></nav>
+
+	<input type="hidden" id="currentObjId" th:value="${obj.id}" />
+
+
+
+	<div class="container">
+
+
+		<div class="row">
+
+			<div class="col-sm-9 blog-main">
+
+				<div class="blog-post">
+					<h2 class="blog-post-title">${Objname} show</h2>
+					<hr />
+
+					${showForm}
+
+				</div>
+				<!-- blog-post -->
+				<div class="form-group">
+					<div class="col-sm-offset-8 col-sm-4">
+						<a type="button" class="btn btn-success" th:href="@{'/${objname}/index'}">返回列表</a>
+						<a type="button" class="btn btn-info" th:href="@{'/${objname}/edit?id='+${obj.id}}">编辑</a>
+
+					</div>
+				</div>
+			</div>
+			<!-- blog-main -->
+		</div>
+		<!-- row -->
+
+
+	</div>
+	<!-- /.container -->
+	<div class="navbar-fixed-bottom blog-footer" th:include="index :: footer"></div>
+</body>
+
+<script th:inline="javascript">
+	
+</script>
+
+</html>

@@ -1,0 +1,8 @@
+package ${url}.service;
+
+import java.util.List;
+
+import ${domainUrl}.${Objname};
+
+public interface I${Objname}Service extends BaseService<${Objname}> {
+}

@@ -1,0 +1,70 @@
+package ${url}.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Service;
+
+import ${url}.dao.${Objname}Dao;
+import ${domainUrl}.${Objname};
+import ${url}.service.I${Objname}Service;
+
+@Service
+public class ${Objname}Service implements I${Objname}Service {
+
+	@Autowired
+	private ${Objname}Dao dao;
+	
+	
+	@Override
+	public ${Objname} save(${Objname} obj) {
+		dao.save(obj);
+		return obj;
+	}
+
+	@Override
+	public void delete(Long id) {
+		dao.delete(id);		
+	}
+
+	@Override
+	public void delete(${Objname} obj) {
+		dao.delete(obj);			
+	}
+
+	@Override
+	public ${Objname} findById(Long id) {
+		return dao.findOne(id);
+	}
+
+	@Override
+	public ${Objname} findBySample(${Objname} sample) {
+		return null;
+	}
+
+	@Override
+	public List<${Objname}> findAll() {
+		return (List<${Objname}>) dao.findAll();
+	}
+
+	@Override
+	public List<${Objname}> findAll(${Objname} sample) {
+		return null;
+	}
+
+	@Override
+	public Page<${Objname}> findAll(PageRequest pageRequest) {
+		return null;
+	}
+
+	
+	@Override
+	public Page<${Objname}> findAll(${Objname} sample, PageRequest pageRequest) {
+		return null;
+	}
+
+
+
+}

@@ -1,0 +1,7 @@
+package ${url}.dao;
+
+import org.springframework.data.repository.CrudRepository;
+import ${domainUrl}.${Objname};
+
+public interface ${Objname}Dao extends CrudRepository<${Objname}, Long> {
+}
