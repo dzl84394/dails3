@@ -1,4 +1,4 @@
-package com.dails.base;
+package com.dails.ring;
 
 /**
  * Hello world!

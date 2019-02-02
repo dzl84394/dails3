@@ -1,4 +1,4 @@
-package com.dails.base.utils;
+package com.dails.utils;
 
 public class DateUtils {
 
